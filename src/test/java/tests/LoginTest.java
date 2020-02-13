@@ -19,11 +19,13 @@ public class LoginTest {
     }
 
     @Steps
-    UserSteps userSteps;
+    UserSteps user;
 
     @Test
     public void negativeLoginTest(){
-        webDriver.get("https://www.linkedin.com/");
-        userSteps.login("aghfh@eee.io", "password123");
+        user
+            .login("aghfh@eee.io", "password123")
+            .validatePageHeader(
+                "Don't miss your next opportunity. Sign in to stay updated on your professional world.");
     }
 }
