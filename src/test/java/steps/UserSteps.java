@@ -3,6 +3,7 @@ package steps;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import pages.HomePage;
 import pages.LandingPage;
 import pages.LoginChallengePage;
@@ -33,5 +34,12 @@ public class UserSteps extends ScenarioSteps {
         String actuaResult = homePage.getWelcomeMessageText();
         Assert.assertEquals("Wrong welcome message", actuaResult, expectedMessage);
         return this;
+    }
+
+    @Step
+    public UserSteps searchByTerm(String searchText){
+        homePage.searchBySearchTerm(searchText);
+        return this;
+
     }
 }
