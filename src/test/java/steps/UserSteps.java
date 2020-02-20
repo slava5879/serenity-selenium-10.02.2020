@@ -3,6 +3,7 @@ package steps;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.junit.Assert;
+import pages.HomePage;
 import pages.LandingPage;
 import pages.LoginChallengePage;
 
@@ -10,6 +11,7 @@ public class UserSteps extends ScenarioSteps {
 
     private LandingPage landingPage;
     private LoginChallengePage loginChallengePage;
+    private HomePage homePage;
 
     @Step
     public UserSteps login(String userEmail, String userPassword){
@@ -23,6 +25,13 @@ public class UserSteps extends ScenarioSteps {
     public UserSteps validatePageHeader (String expectedMessage){
         String actualResult = loginChallengePage.element(loginChallengePage.headerMessage).getText();
         Assert.assertEquals("Wrong expected message",expectedMessage, actualResult);
+        return this;
+    }
+
+    @Step
+    public UserSteps validateWelcomeMessage (String expectedMessage){
+        String actuaResult = homePage.getWelcomeMessageText();
+        Assert.assertEquals("Wrong welcome message", actuaResult, expectedMessage);
         return this;
     }
 }
