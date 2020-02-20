@@ -21,7 +21,6 @@ public class LandingPage extends PageObject {
         userEmailField.sendKeys(userEmail);
         userPasswordField.sendKeys(userPassword);
         loginButton.click();
-
     }
 
 }
