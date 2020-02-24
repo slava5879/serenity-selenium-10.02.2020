@@ -5,21 +5,20 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
-public class LoginTest extends BaseTest{
+public class LoginTest extends BaseTest {
 
     @Test
-    public void negativeLoginTest(){
+    public void negativeLoginTest() {
         user
-            .login("sslava543@gmail.com", "qwerty123456")
-            .validatePageHeader(
-                "Don't miss your next opportunity. Sign in to stay updated on your professional world.");
+                .auth()
+                .login("a@b.c", "P@ssword123")
+                .validatePageHeader("Don't miss your next opportunity. Sign in to stay updated on your professional world.");
     }
 
     @Test
-    public void positiveLoginTest(){
+    public void successfulLogin() {
         user
-                .login("sslava543@gmail.com", "qwerty12345")
-                .validateWelcomeMessage("Welcome, Viacheslav!");
-
+                .auth()
+                .login("sslava543@gmail.com", "qwerty12345");
     }
 }
