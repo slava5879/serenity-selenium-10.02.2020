@@ -50,6 +50,16 @@
                 <artifactId>serenity-maven-plugin</artifactId>
                 <version>2.0.88</version>
 
+                <executions>
+                    <execution>
+                        <id>serenity-reports</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>aggregate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
             </plugin>
         </plugins>
     </build>
