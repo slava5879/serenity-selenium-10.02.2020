@@ -10,6 +10,7 @@
 
     <properties>
         <serenity.version>2.1.6</serenity.version>
+        <jbehave.version>1.46.0</jbehave.version>
         <selenium.version>3.141.59</selenium.version>
         <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
         <surefire.version>2.20</surefire.version>
@@ -80,12 +81,20 @@
             <version>${serenity.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-jbehave -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-jbehave</artifactId>
+            <version>${jbehave.version}</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
+
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>

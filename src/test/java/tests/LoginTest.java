@@ -19,6 +19,7 @@ public class LoginTest extends BaseTest {
     public void successfulLogin() {
         user
                 .auth()
+                .openLandingPage()
                 .login("sslava543@gmail.com", "qwerty12345");
     }
 }

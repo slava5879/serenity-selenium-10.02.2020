@@ -9,6 +9,7 @@ import pages.SearchPage;
 
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.CoreMatchers.containsString;
 
 public class SearchSteps extends ScenarioSteps {
@@ -24,6 +25,15 @@ public class SearchSteps extends ScenarioSteps {
 
         // using Hamcrest matchers
         Assert.assertThat(searchResultList, Every.everyItem(containsString(searchTerm)));
+
+        return this;
+    }
+
+    @Step
+    public SearchSteps verifyEachResultContains(String[] searchTerm) {
+        List<String> searchResultList = searchPage.getSearchResultsList();
+
+        //Assert.assertThat(searchResultList, Every.everyItem(containsString(anyOf(searchTerm))));
 
         return this;
     }
