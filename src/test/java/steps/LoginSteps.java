@@ -3,6 +3,8 @@ package steps;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Then;
+import org.jbehave.core.annotations.When;
 import org.junit.Assert;
 import pages.LandingPage;
 import pages.LoginChallengePage;
@@ -19,6 +21,7 @@ public class LoginSteps extends ScenarioSteps {
         return this;
     }
 
+    @When("I log in with username 'sslava543@gmail.com' and password 'qwerty12345'")
     @Step
     public LoginSteps login(String userEmail, String userPassword) {
         landingPage.open();
@@ -27,6 +30,7 @@ public class LoginSteps extends ScenarioSteps {
         return this;
     }
 
+    @Then("I should see Home page")
     @Step
     public LoginSteps validatePageHeader(String expectedMessage) {
         Assert.assertEquals("Wrong header message.", expectedMessage, loginChallenge.getHeaderMessageText());

@@ -10,5 +10,5 @@ Narrative:
 
 Scenario: Successful log in
 Given I open Landing page
-When I log in with username 'user' and password 'pass'
+When I log in with username 'sslava543@gmail.com' and password 'qwerty12345'
 Then I should see Home page

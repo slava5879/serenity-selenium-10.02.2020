@@ -20,6 +20,7 @@
         <test.name>*</test.name>
     </properties>
 
+
     <build>
         <plugins>
             <plugin>
