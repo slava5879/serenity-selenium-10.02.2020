@@ -22,16 +22,15 @@ public class LoginSteps extends ScenarioSteps {
         return this;
     }
 
-    @When("I log in with username 'sslava543@gmail.com' and password 'qwerty12345'")
+    @When("I log in with username <user> and password <password>")
     @Step
-    public LoginSteps login(@Named("user") String userEmail, @Named("password")String userPassword) {
+    public LoginSteps login(@Named("user") String userEmail, @Named("password") String userPassword) {
         landingPage.open();
         landingPage.login(userEmail, userPassword);
         waitABit(600);
         return this;
     }
 
-    @Then("I should see Home page")
     @Step
     public LoginSteps validatePageHeader(String expectedMessage) {
         Assert.assertEquals("Wrong header message.", expectedMessage, loginChallenge.getHeaderMessageText());
