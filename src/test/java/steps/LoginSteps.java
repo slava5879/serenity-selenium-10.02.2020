@@ -3,6 +3,7 @@ package steps;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import org.jbehave.core.annotations.Given;
+import org.jbehave.core.annotations.Named;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 import org.junit.Assert;
@@ -23,7 +24,7 @@ public class LoginSteps extends ScenarioSteps {
 
     @When("I log in with username 'sslava543@gmail.com' and password 'qwerty12345'")
     @Step
-    public LoginSteps login(String userEmail, String userPassword) {
+    public LoginSteps login(@Named("user") String userEmail, @Named("password")String userPassword) {
         landingPage.open();
         landingPage.login(userEmail, userPassword);
         waitABit(600);

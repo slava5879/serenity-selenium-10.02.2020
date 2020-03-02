@@ -10,5 +10,9 @@ Narrative:
 
 Scenario: Successful log in
 Given I open Landing page
-When I log in with username 'sslava543@gmail.com' and password 'qwerty12345'
+When I log in with username <user> and password <password>
 Then I should see Home page
+
+Examples:
+|user|password|
+|sslava543@gmail.com|qwerty12345|
