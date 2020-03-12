@@ -14,7 +14,7 @@ Scope: SCENARIO
 Given I open Landing page
 
 Scenario: Successful log in
-When I log in with username <user> and password <password>
+When I log in with username $user and password $password
 Then I should see Home page
 
 Examples:
