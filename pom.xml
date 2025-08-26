@@ -14,7 +14,7 @@
         <selenium.version>3.141.59</selenium.version>
         <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
         <surefire.version>2.20</surefire.version>
-        <webdrivermanager.version>3.8.1</webdrivermanager.version>
+        <webdrivermanager.version>6.1.0</webdrivermanager.version>
         <source.encoding>UTF-8</source.encoding>
         <mysql.version>8.0.19</mysql.version>
         <java.version>8</java.version>
